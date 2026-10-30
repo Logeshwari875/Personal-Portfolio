@@ -1,0 +1,741 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #081510;
+    --surface: #10231a;
+    --surface-light: #172e23;
+    --primary: #b8d8b0;
+    --accent: #d6b878;
+    --text: #f5f2e9;
+    --muted: #a8b5aa;
+    --border: rgba(184, 216, 176, 0.15);
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(91, 137, 98, 0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(44, 95, 66, 0.12),
+            transparent 35%
+        ),
+        var(--background);
+
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(8, 21, 16, 0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 100px 10%;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+section p {
+    color: var(--muted);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 6vw, 75px);
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    max-width: 850px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+
+    background: var(--primary);
+    color: var(--background);
+
+    padding: 14px 30px;
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+#about {
+    background: rgba(16, 35, 26, 0.45);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+#about p {
+    max-width: 800px;
+    font-size: 17px;
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(180px, 1fr)
+    );
+
+    gap: 18px;
+}
+
+.skill {
+    background: rgba(23, 46, 35, 0.7);
+
+    padding: 25px;
+    text-align: center;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.skill:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    background: var(--surface-light);
+}
+
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects-container {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+    );
+
+    gap: 25px;
+}
+
+.project-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(23, 46, 35, 0.95),
+            rgba(12, 28, 20, 0.95)
+        );
+
+    padding: 35px;
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    transition: 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 500;
+
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.project-card span {
+    display: inline-block;
+
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+#contact {
+    background: rgba(16, 35, 26, 0.45);
+    border-top: 1px solid var(--border);
+}
+
+#contact p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 2px solid var(--accent);
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 0 35px rgba(184, 216, 176, 0.12);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px 8%;
+    text-align: center;
+
+    background: var(--background);
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 5%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .project-card {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+    }
+}
+/* Modern Hero Background Design */
+
+.hero {
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: 5%;
+    top: 15%;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(184, 216, 176, 0.18) 0%,
+        rgba(65, 120, 82, 0.10) 40%,
+        transparent 70%
+    );
+
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: 10%;
+    top: 20%;
+
+    border: 1px solid rgba(214, 184, 120, 0.15);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 60px rgba(184, 216, 176, 0.05),
+        inset 0 0 60px rgba(184, 216, 176, 0.04);
+
+    pointer-events: none;
+}
+
+.hero h1,
+.hero p,
+.hero .btn,
+.hero .profile-image {
+    position: relative;
+    z-index: 1;
+}
+/* =========================
+   PASTEL ROSE + LAVENDER THEME
+========================= */
+
+:root {
+    --background: #faf4f8;
+    --surface: #f5e8f1;
+    --surface-light: #eee1f3;
+
+    --primary: #b77b9c;
+    --accent: #a18bc4;
+
+    --text: #3e3041;
+    --muted: #786879;
+
+    --border: rgba(183, 123, 156, 0.22);
+}
+
+/* Main Background */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(245, 205, 224, 0.65),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 45%,
+            rgba(218, 205, 242, 0.55),
+            transparent 35%
+        ),
+        #faf4f8;
+
+    color: var(--text);
+}
+
+/* Navigation */
+
+header {
+    background: rgba(250, 244, 248, 0.88);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: #a66d91;
+}
+
+nav a {
+    color: #786879;
+}
+
+nav a:hover {
+    color: #a18bc4;
+}
+
+/* Hero Background Design */
+
+.hero::before {
+    background: radial-gradient(
+        circle,
+        rgba(245, 190, 218, 0.65) 0%,
+        rgba(218, 205, 242, 0.35) 45%,
+        transparent 70%
+    );
+}
+
+.hero::after {
+    border-color: rgba(183, 123, 156, 0.25);
+
+    box-shadow:
+        0 0 60px rgba(218, 205, 242, 0.2),
+        inset 0 0 60px rgba(245, 205, 224, 0.15);
+}
+
+/* Headings */
+
+h2 {
+    color: #a66d91;
+}
+
+.hero h1 span {
+    color: #a66d91;
+}
+
+/* Buttons */
+
+.btn {
+    background: #b77b9c;
+    color: white;
+}
+
+.btn:hover {
+    background: #a18bc4;
+}
+
+/* About and Contact */
+
+#about,
+#contact {
+    background: rgba(245, 232, 241, 0.65);
+}
+
+/* Skills */
+
+.skill {
+    background: rgba(255, 255, 255, 0.65);
+    color: #5a455b;
+    border-color: rgba(183, 123, 156, 0.2);
+}
+
+.skill:hover {
+    background: #f1e5f4;
+    border-color: #b77b9c;
+}
+
+/* Project Cards */
+
+.project-card {
+    background: linear-gradient(
+        145deg,
+        #fff9fc,
+        #f0e7f5
+    );
+
+    border-color: rgba(183, 123, 156, 0.2);
+}
+
+.project-card h3 {
+    color: #a66d91;
+}
+
+.project-card span {
+    color: #9177b5;
+}
+
+.project-card:hover {
+    border-color: #b77b9c;
+
+    box-shadow:
+        0 15px 40px rgba(183, 123, 156, 0.12);
+}
+
+/* Profile Image */
+
+.profile-image {
+    border-color: #c99ab5;
+
+    box-shadow:
+        0 0 35px rgba(218, 180, 220, 0.25);
+}
+
+/* Footer */
+
+footer {
+    background: #f5e8f1;
+    color: #786879;
+    border-top: 1px solid var(--border);
+}
+/* Elegant Hero Intro Label */
+
+.hero-tag {
+    display: inline-block;
+
+    color: #a66d91;
+    background: rgba(245, 205, 224, 0.35);
+
+    border: 1px solid rgba(183, 123, 156, 0.25);
+    border-radius: 30px;
+
+    padding: 8px 18px;
+    margin-bottom: 22px;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* Elegant Hero Heading */
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+/* Soft Lavender Highlight */
+
+.hero h1 span {
+    color: #a18bc4;
+    font-style: italic;
+}
+
+/* Soft Rose Button */
+
+.btn {
+    border-radius: 30px;
+    padding: 14px 32px;
+
+    background: linear-gradient(
+        135deg,
+        #c58eae,
+        #a18bc4
+    );
+
+    color: white;
+    box-shadow: 0 8px 20px rgba(183, 123, 156, 0.15);
+}
+/* Modern Pastel Project Cards */
+
+.projects-container {
+    gap: 30px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(197, 142, 174, 0.25);
+    border-radius: 18px;
+
+    padding: 35px;
+
+    box-shadow: 0 10px 30px rgba(161, 139, 196, 0.08);
+
+    transition: all 0.35s ease;
+}
+
+/* Decorative Rose Circle */
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+    top: -55px;
+    right: -55px;
+
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+
+    background: rgba(245, 205, 224, 0.4);
+
+    pointer-events: none;
+}
+
+/* Card Hover Effect */
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(161, 139, 196, 0.5);
+
+    box-shadow: 0 20px 40px rgba(161, 139, 196, 0.15);
+}
+
+/* Project Title */
+
+.project-card h3 {
+    position: relative;
+    z-index: 1;
+
+    font-family: Georgia, serif;
+    font-size: 26px;
+
+    color: #a66d91;
+    margin-bottom: 15px;
+}
+
+/* Project Description */
+
+.project-card p {
+    position: relative;
+    z-index: 1;
+
+    color: #786879;
+    line-height: 1.8;
+}
+
+/* Technology Tags */
+
+.project-card span {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 7px 14px;
+
+    background: #f5e8f1;
+    border-radius: 20px;
+
+    color: #9177b5;
+    font-size: 12px;
+}
